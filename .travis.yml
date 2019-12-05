@@ -1,35 +1,28 @@
 language: node_js
-
 node_js:
   - "10"
+cache:
+  yarn: true
+  directories:
+    - node_modules
 install:
-  - yarn install
+  - yarn --frozen-lockfile --non-interactive
 
 stages:
-  - test
   - name: deploy
-
 jobs:
   include:
-  - stage: test
-     script:
-       - node --version
-       - npm --version
-       - echo "Testing Started ..."
-       - npm test
-       - echo "Testing Finished."
-
-   - stage: deploy
-     script:
-       - echo "NPM Deploying Started ..."
-       - npm version
-      #  - npm run build
-       - echo "NPM Building Finished."
-
-     deploy:
+    - stage: deploy
+      if: tag IS present
+      script:
+        - echo "NPM Deploying Started ..."
+        - npm version
+        - echo "NPM Building Finished."
+      deploy:
+        edge: true
         provider: npm
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
-       skip_cleanup: true
-       on:
-         all_branches: true
+        skip_cleanup: true
+        on:
+          all_branches: true
