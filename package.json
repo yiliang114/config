@@ -1,9 +1,13 @@
 {
   "name": "eslint-config-yiliang",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {},
+  "files": [
+    "package.json",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yiliang114/eslint-config-yiliang.git"

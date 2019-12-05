@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["./index.js"].map(require.resolve)
+  extends: ["./src/index.js"].map(require.resolve)
 };
