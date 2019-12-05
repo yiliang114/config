@@ -13,7 +13,7 @@ stages:
 jobs:
   include:
     - stage: deploy
-      # if: tag IS present
+      if: tag IS present
       script:
         - echo "NPM Deploying Started ..."
         - npm version
