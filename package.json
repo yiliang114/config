@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config-yiliang",
-  "version": "0.0.3",
+  "name": "eslint-config-wire",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {},
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yiliang114/eslint-config-yiliang.git"
+    "url": "https://github.com/yiliang114/eslint-config-wire.git"
   },
   "dependencies": {
     "eslint-config-airbnb-base": "^13.1.0"
