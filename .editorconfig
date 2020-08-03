@@ -1,3 +1,4 @@
+# https://editorconfig.org/
 root = true
 
 [*]
@@ -19,4 +20,5 @@ max_line_length = 100
 indent_style = space
 indent_size = 2
 
-# https://editorconfig.org/
+[*.md]
+trim_trailing_whitespace = false
