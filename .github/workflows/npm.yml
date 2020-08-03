@@ -1,0 +1,39 @@
+name: master action
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release branch code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install project dependencies
+        run: npm install
+
+      - uses: tinovyatkin/action-eslint@v1
+        with:
+          repo-token: ${{secrets.TOKEN}}
+          check-name: eslint
+
+      # 直接就可以发布
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
