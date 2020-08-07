@@ -52,7 +52,7 @@ export default {
   },
 
   bus: {
-    quickOpenProject(project) {
+    quickOpenProject() {
       this.$apollo.getClient().writeQuery({
         query: TASKS,
         data: {
