@@ -293,4 +293,16 @@ module.exports = {
     ], // 大括号内是否允许不必要的空格
     'array-bracket-spacing': [2, 'never'], // 是否允许非空数组里面有多余的空格
   },
+  overrides: [
+    {
+      files: ['*.vue'],
+      rules: {
+        'vue/return-in-computed-property': 1,
+        'vue/order-in-components': 2,
+        // 组件标签的命名
+        'vue/component-name-in-template-casing': [2, 'PascalCase'],
+        'vue/require-default-prop': 0,
+      },
+    },
+  ],
 };

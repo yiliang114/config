@@ -6,10 +6,6 @@
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },
   "main": "index.js",
-  "files": [
-    "package.json",
-    "src"
-  ],
   "dependencies": {
     "eslint-config-airbnb-base": "^13.1.0"
   },
