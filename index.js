@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  // TODO:
   env: {
     // TODO:
     browser: true,
