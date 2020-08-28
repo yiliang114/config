@@ -1,3 +1,4 @@
+// .prettierrc.js
 module.exports = {
   // 一行最多 120 字符
   printWidth: 120,
@@ -36,4 +37,6 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   // 换行符使用 lf
   endOfLine: 'lf',
+  // 格式化嵌入的内容
+  embeddedLanguageFormatting: 'auto',
 };
