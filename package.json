@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "config for yiliang114",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "publish": "pnpm publish",
+    "build": "pnpm --filter=@qftjs/* run build",
+    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },
@@ -15,6 +20,7 @@
     "eslint-plugin-vue": "^7.3.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.24.4",
     "eslint": "^7.16.0"
   },
   "repository": {
