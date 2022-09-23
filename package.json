@@ -1,10 +1,9 @@
 {
   "name": "@yiliang114/config",
-  "version": "0.0.2",
+  "version": "0.0.3-beta",
   "description": "config for yiliang114",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "publish": "pnpm publish",
     "build": "pnpm --filter=@qftjs/* run build",
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "changeset": "changeset",
