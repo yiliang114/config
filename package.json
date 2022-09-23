@@ -2,6 +2,7 @@
   "name": "@yiliang114/config",
   "version": "0.0.4-alpha",
   "description": "config for yiliang114",
+  "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "pnpm --filter=@qftjs/* run build",

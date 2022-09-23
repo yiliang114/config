@@ -1,8 +1,8 @@
-name: master action
+name: main action
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   release:
