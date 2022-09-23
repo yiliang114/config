@@ -1,11 +1,11 @@
 {
-  "name": "eslint-config-wire",
+  "name": "@yiliang114/config",
   "version": "0.0.1",
+  "description": "config for yiliang114",
   "scripts": {
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },
-  "main": "index.js",
   "dependencies": {
     "@typescript-eslint/parser": "^4.11.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -16,9 +16,14 @@
   "devDependencies": {
     "eslint": "^7.16.0"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yiliang114/eslint-config-wire.git"
-  }
+    "url": "git+https://github.com/yiliang114/config.git"
+  },
+  "author": "yiliang114",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yiliang114/config/issues"
+  },
+  "homepage": "https://github.com/yiliang114/config#readme"
 }
