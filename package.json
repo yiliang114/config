@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/config",
-  "version": "0.0.3-beta",
+  "version": "0.0.4-alpha",
   "description": "config for yiliang114",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
