@@ -1,8 +1,10 @@
 {
   "name": "@yiliang114/config",
   "version": "0.0.1",
+  "private": "true",
   "description": "config for yiliang114",
   "scripts": {
+    "publish": "pnpm publish",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },
