@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "pnpm --filter=@qftjs/* run build",
+    "build": "pnpm --filter=@yiliang114/* run build",
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
