@@ -20,3 +20,9 @@ eslint-plugin-import@latest 的作用 ？
    1. js/jsx/ts/tsx
    2. vue
 2. prettier
+
+## publish
+
+```
+npm publish --access public
+```
