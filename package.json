@@ -9,6 +9,8 @@
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
+    "release": "pnpm build && pnpm release:only",
+    "release:only": "changeset publish --registry=https://registry.npmjs.com/",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.24.4",
+    "changelog": "link:@changesets/cli/changelog",
     "eslint": "^7.16.0"
   },
   "repository": {

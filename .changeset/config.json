@@ -1,9 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "owner/repo" }],
+  "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  "linked": [],
+  "linked": [["@yiliang114/*"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",

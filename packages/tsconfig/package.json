@@ -1,13 +1,13 @@
 {
   "name": "@yiliang114/tsconfig",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A base TSConfig for working with yiliang114.",
   "keywords": [
     "tsconfig",
     "node16"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"test: build\""
   },
   "repository": {
     "type": "git",
