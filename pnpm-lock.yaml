@@ -60,6 +60,27 @@ importers:
       prettier: 1.19.1
       typescript: 3.7.7
 
+  packages/eslint-ts-base:
+    specifiers:
+      '@typescript-eslint/eslint-plugin': ^2.7.0
+      '@typescript-eslint/parser': ^2.7.0
+      eslint: ^6.6.0
+      eslint-config-prettify-base: ^0.1.8
+      eslint-import-resolver-typescript: ^2.0.0
+      eslint-plugin-import: ^2.22.1
+      prettier: ~1.19.1
+      typescript: ~3.7.2
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 2.34.0_qkxz7ugqywg54o5pcp7x4vxcte
+      '@typescript-eslint/parser': 2.34.0_uu7pjxjf6wbs4nh2kae37zmgje
+      eslint-config-prettify-base: 0.1.8_rztzgstspfddupvtk6pjvgut2i
+      eslint-import-resolver-typescript: 2.7.1_rweni25kkda7eskrwa223jl4pa
+      eslint-plugin-import: 2.26.0_sifv467yifx7tblloe5bvsehqu
+    devDependencies:
+      eslint: 6.8.0
+      prettier: 1.19.1
+      typescript: 3.7.7
+
   packages/prettier:
     specifiers: {}
 
