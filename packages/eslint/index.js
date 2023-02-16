@@ -1,28 +1,44 @@
 module.exports = {
-  extends: [
-    'airbnb-base',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/recommended',
-    'prettier',
-    'prettier/vue',
-  ],
-
+  root: true,
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 2019,
     sourceType: 'module',
-    extraFileExtensions: ['.vue'],
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-
-  plugins: ['@typescript-eslint'],
-
   env: {
-    es6: true,
-    node: true,
-    jest: true,
     browser: true,
+    es6: true,
   },
-
-  rules: {},
+  extends: [
+    'plugin:import/typescript',
+    'prettier/@typescript-eslint',
+    'eslint-config-prettify-base',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  plugins: ['@typescript-eslint'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+      'babel-eslint': ['.js', '.jsx', '.json'],
+    },
+    'import/extensions': ['.ts', '.tsx', '.js', '.jsx'],
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true, // always try to resolve types under `<roo/>@types` directory even it doesn't contain any source code, like `@types/unist`
+        directory: process.cwd(),
+      },
+    },
+  },
+  rules: {
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/camelcase': [
+      'warn',
+      { properties: 'never', ignoreDestructuring: false },
+    ],
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
+  },
 };
