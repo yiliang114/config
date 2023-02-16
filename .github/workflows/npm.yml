@@ -3,7 +3,7 @@ name: main action
 on:
   push:
     # TODO: 自动 test + publish
-    branches: [master]
+    branches: [main]
 
 jobs:
   release:
