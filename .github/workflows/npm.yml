@@ -14,13 +14,23 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: use Node.js 16
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "16.x"
+
+      - name: use pnpm 6.32.2
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.2
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
@@ -28,11 +38,6 @@ jobs:
 
       - name: Install project dependencies
         run: pnpm install
-
-      - uses: tinovyatkin/action-eslint@v1
-        with:
-          repo-token: ${{secrets.TOKEN}}
-          check-name: eslint
 
       # 直接就可以发布
       - run: npx semantic-release
