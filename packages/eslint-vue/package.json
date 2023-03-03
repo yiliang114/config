@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/eslint-config-vue",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "eslint config vue",
   "main": "index.js",
   "keywords": [

@@ -1,5 +1,11 @@
 # @yiliang114/eslint-config-vue
 
+## 1.1.2
+
+### Patch Changes
+
+- fix: use @yiliang114/eslint-ts-base
+
 ## 1.1.1
 
 ### Patch Changes
