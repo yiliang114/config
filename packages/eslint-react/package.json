@@ -1,11 +1,12 @@
 {
-  "name": "@yiliang114/eslint-config",
+  "name": "@yiliang114/eslint-config-react",
   "version": "1.1.1",
-  "description": "eslint config",
+  "description": "eslint config react",
   "main": "index.js",
   "keywords": [
     "eslint",
-    "config"
+    "config",
+    "react"
   ],
   "scripts": {
     "lint": "eslint ."
@@ -17,15 +18,14 @@
     "@typescript-eslint/parser": "^2.7.0",
     "eslint-config-prettify-base": "^0.1.8",
     "eslint-import-resolver-typescript": "^2.0.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "@yiliang114/eslint-ts-base": "^1.1.1"
   },
   "peerDependencies": {
     "eslint": "^6.0.0",
     "typescript": "^3.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.6.0",
-    "prettier": "~1.19.1",
-    "typescript": "~3.7.2"
   }
 }

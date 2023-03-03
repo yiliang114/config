@@ -1,4 +1,4 @@
-# @yiliang114/eslint-config-vue
+# @yiliang114/eslint-config-react
 
 > Personal eslint configuration.
 

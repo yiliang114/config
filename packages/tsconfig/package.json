@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/tsconfig",
-  "version": "0.0.3",
+  "version": "1.1.1",
   "description": "A base TSConfig for working with yiliang114.",
   "keywords": [
     "tsconfig",

@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 1.1.1
+
+### Patch Changes
+
+- feat: add eslint-config-react and update eslint-config-vue
+
 ## 0.0.3
 
 ### Patch Changes
