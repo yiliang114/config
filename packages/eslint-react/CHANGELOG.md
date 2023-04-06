@@ -1,5 +1,13 @@
 # @yiliang114/eslint-config-react
 
+## 2.0.2
+
+### Patch Changes
+
+- change name for eslint-config and Upgrade
+- Updated dependencies
+  - @yiliang114/eslint-config@2.0.2
+
 ## 2.0.0
 
 ### Major Changes
@@ -9,13 +17,13 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @yiliang114/eslint-config-ts-base@2.0.0
+  - @yiliang114/eslint-config@2.0.0
 
 ## 1.1.2
 
 ### Patch Changes
 
-- fix: use @yiliang114/eslint-config-ts-base
+- fix: use @yiliang114/eslint-config
 
 ## 1.1.1
 
@@ -23,4 +31,4 @@
 
 - feat: add eslint-config-react and update eslint-config-vue
 - Updated dependencies
-  - @yiliang114/eslint-config-ts-base@1.1.1
+  - @yiliang114/eslint-config@1.1.1

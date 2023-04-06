@@ -1,5 +1,17 @@
 # @yiliang114/eslint-config
 
+## 2.0.2
+
+### Patch Changes
+
+- change name for eslint-config and Upgrade
+
+## 2.0.1
+
+### Patch Changes
+
+- del @typescript-eslint/camelcase
+
 ## 2.0.0
 
 ### Major Changes
@@ -12,14 +24,8 @@
 
 - feat: add eslint-config-react and update eslint-config-vue
 
-## 1.0.0
-
-### Major Changes
-
-- feat: add more config and publish new version
-
-## 0.0.3
+## 1.0.1
 
 ### Patch Changes
 
-- add build script to Complete workflow
+- init
