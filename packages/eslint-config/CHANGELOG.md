@@ -1,5 +1,11 @@
 # @yiliang114/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- change name to standard
+
 ## 1.1.1
 
 ### Patch Changes

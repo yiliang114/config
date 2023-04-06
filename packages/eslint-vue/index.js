@@ -20,7 +20,7 @@ module.exports = {
       },
     },
   ],
-  extends: ['plugin:vue/vue3-recommended', '@yiliang114/eslint-ts-base', 'prettier'],
+  extends: ['plugin:vue/vue3-recommended', '@yiliang114/eslint-config-ts-base', 'prettier'],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts', '.vue'] },

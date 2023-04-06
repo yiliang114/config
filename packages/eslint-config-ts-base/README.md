@@ -1,4 +1,4 @@
-# @yiliang114/eslint-ts-base
+# @yiliang114/eslint-config-ts-base
 
 > Personal eslint configuration.
 

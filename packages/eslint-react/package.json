@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/eslint-config-react",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "eslint config react",
   "main": "index.js",
   "keywords": [
@@ -22,7 +22,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "@yiliang114/eslint-ts-base": "^1.1.1"
+    "@yiliang114/eslint-config-ts-base": "^2.0.0"
   },
   "peerDependencies": {
     "eslint": "^6.0.0",

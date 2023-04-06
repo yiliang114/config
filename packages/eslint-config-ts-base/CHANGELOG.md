@@ -1,4 +1,10 @@
-# @yiliang114/eslint-ts-base
+# @yiliang114/eslint-config-ts-base
+
+## 2.0.0
+
+### Major Changes
+
+- change name to standard
 
 ## 1.1.1
 
