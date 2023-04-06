@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/eslint-config-vue",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "eslint config vue",
   "main": "index.js",
   "keywords": [
@@ -20,7 +20,7 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^9.9.0",
-    "@yiliang114/eslint-config-ts-base": "^2.0.0"
+    "@yiliang114/eslint-config": "^2.0.2"
   },
   "peerDependencies": {
     "eslint": "^6.0.0",
