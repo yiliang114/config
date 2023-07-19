@@ -15,14 +15,14 @@ jobs:
           fetch-depth: 1
 
       - name: use Node.js 18
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
           node-version: "18.x"
 
-      - name: use pnpm 6.32.2
-        uses: pnpm/action-setup@v2.2.1
+      - name: use pnpm 7.1.0
+        uses: pnpm/action-setup@v2.2.4
         with:
-          version: 6.32.2
+          version: 7.1.0
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install project dependencies
-        run: pnpm install
+        run: pnpm i --frozen-lockfile
 
       # 直接就可以发布
       # This test run was triggered on the branch main, while semantic-release is configured to only publish from master, therefore a new version won’t be published.

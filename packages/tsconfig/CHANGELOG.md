@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 2.0.3
+
+### Patch Changes
+
+- update tsconfig default
+
 ## 1.1.1
 
 ### Patch Changes
