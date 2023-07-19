@@ -1,10 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "@yiliang114/tsconfig",
-
   "compilerOptions": {
-    "outDir": "./dist",
-    "lib": ["DOM", "es5", "ES2015"],
+    "outDir": "./lib",
+    "lib": ["DOM", "es5", "es2016"],
+    "declaration": true, // 生成声明文件
+    "strict": true,
+    "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
