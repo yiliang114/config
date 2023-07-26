@@ -8,7 +8,9 @@
     "strict": true,
     "sourceMap": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declarationMap": true,
+    "skipLibCheck": true // 是否在编译时进行库文件检查, 默认不检查 node_modules
   },
   "include": ["src"],
   "exclude": ["node_modules"],

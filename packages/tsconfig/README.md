@@ -10,15 +10,21 @@ yarn add --dev @yiliang114/tsconfig
 Add to your `tsconfig.json`:
 
 ```json
-"extends": "@yiliang114/tsconfig/tsconfig.json"
+"extends": "@yiliang114/tsconfig",
 ```
 
 ---
 
 The `tsconfig.json`:
 
-```jsonc
+```json
 {
-  "extends": "@tsconfig/node14/tsconfig.json"
+  "extends": "@yiliang114/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
 ```

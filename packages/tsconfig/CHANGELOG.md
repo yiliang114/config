@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 2.0.4
+
+### Patch Changes
+
+- feat: add declarationMap and skipLibCheck default true and update demo
+
 ## 2.0.3
 
 ### Patch Changes
