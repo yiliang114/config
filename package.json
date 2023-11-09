@@ -10,10 +10,10 @@
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "changeset": "changeset",
     "commit": "cz",
-    "vp": "pnpm version-packages",
     "version-packages": "changeset version",
     "release": "pnpm build && pnpm release:only",
     "release:only": "changeset publish --registry=https://registry.npmjs.com/",
+    "ci:publish": "pnpm publish -r",
     "lint": "vue-cli-service lint",
     "fix": "eslint --fix \"**/*.{js,jsx,vue}\""
   },

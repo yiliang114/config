@@ -42,7 +42,8 @@ jobs:
 
       - name: Install project dependencies
         run: pnpm i --frozen-lockfile=false
-
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > .npmrc
       # 打包
       - name: Build Packages
         run: pnpm run build
@@ -53,12 +54,9 @@ jobs:
         with:
           # 执行更新版本和发布的命令
           version: pnpm run version-packages
-          publish: pnpm exec changeset publish
-          commit: "chore: [ci] release"
-          title: "chore: [ci] release"
+          publish: pnpm release
+          commit: "chore: update versions"
+          title: "chore: update versions"
         env:
-          # 这里需要几个 Token 变量
           # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN 需要稍后在 npm 网站生成。
-          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
