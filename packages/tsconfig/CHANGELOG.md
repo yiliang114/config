@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 3.0.2
+
+### Patch Changes
+
+- a3de9b5: test release
+
 ## 3.0.1
 
 ### Patch Changes
