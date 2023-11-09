@@ -7,7 +7,7 @@
     "node16"
   ],
   "scripts": {
-    "build": "echo \"test: build\""
+    "build": "echo \"test: @yiliang114/tsconfig\""
   },
   "repository": {
     "type": "git",
