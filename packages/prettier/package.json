@@ -1,7 +1,7 @@
 {
   "name": "@yiliang114/prettier-config",
   "version": "3.0.0",
-  "description": "prettier config",
+  "description": "yiliang114's personal config of base prettier config.",
   "main": "index.js",
   "scripts": {
     "build": "echo \"test: build\""
