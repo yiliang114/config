@@ -1,0 +1,69 @@
+# 整个流程的名字
+name: Release
+
+# 触发时机，在 main 分支 push 操作触发
+on:
+  push:
+    branches:
+      - main
+
+# 默认 shell
+# defaults:
+#   run:
+#     shell: bash
+
+# 任务，定义个 changelog 的任务
+jobs:
+  changelog:
+    name: Changelog PR or Release
+    # 这里判断仓库owner是否是我自己，为了避免别人 fork 仓库触发，请自行修改
+    if: ${{ github.repository_owner == 'yiliang114' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+          cache: "pnpm"
+      # 设置 pnpm。指定版本 7.0，不然会报错
+      - name: use pnpm 7.1.0
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.1.0
+
+      # 安装依赖
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install project dependencies
+        run: pnpm i --frozen-lockfile
+
+      # 打包
+      - name: Build Packages
+        run: pnpm run build
+      # 这一步是最重要的。使用changesets/action自动创建 PR 或者发布
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # 执行更新版本和发布的命令
+          version: pnpm run version
+          publish: pnpm exec changeset publish
+          commit: "[ci] release"
+          title: "[ci] release"
+        env:
+          # 这里需要几个 Token 变量
+          # GITHUB_TOKEN 是 CI 里自带的默认 token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN 需要稍后在 npm 网站生成。
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
