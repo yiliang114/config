@@ -60,3 +60,4 @@ jobs:
         env:
           # GITHUB_TOKEN 是 CI 里自带的默认 token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

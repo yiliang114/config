@@ -4,7 +4,7 @@
   "description": "yiliang114's personal config of base prettier config.",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"test: build @yiliang114/prettier-config.\""
+    "build": "echo \"test: build @yiliang114/prettier-config..\""
   },
   "author": "yiliang114",
   "license": "MIT"
