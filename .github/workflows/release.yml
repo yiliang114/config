@@ -54,7 +54,7 @@ jobs:
         with:
           # 执行更新版本和发布的命令
           version: pnpm run version-packages
-          publish: pnpm release
+          publish: pnpm run ci:publish
           commit: "chore: update versions"
           title: "chore: update versions"
         env:
