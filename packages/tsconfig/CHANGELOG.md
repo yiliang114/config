@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 3.0.3
+
+### Patch Changes
+
+- ea0c6ed: test release
+
 ## 3.0.2
 
 ### Patch Changes
