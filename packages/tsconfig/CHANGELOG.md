@@ -1,5 +1,11 @@
 # @yiliang114/tsconfig
 
+## 3.0.1
+
+### Patch Changes
+
+- a200c9f: update desc.
+
 ## 2.0.4
 
 ### Patch Changes

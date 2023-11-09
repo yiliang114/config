@@ -1,5 +1,11 @@
 # @yiliang114/prettier-config
 
+## 3.0.1
+
+### Patch Changes
+
+- a200c9f: update desc.
+
 ## 3.0.0
 
 ### Major Changes
