@@ -7,11 +7,6 @@ on:
     branches:
       - main
 
-# 默认 shell
-# defaults:
-#   run:
-#     shell: bash
-
 # 任务，定义个 changelog 的任务
 jobs:
   changelog:
@@ -64,6 +59,6 @@ jobs:
         env:
           # 这里需要几个 Token 变量
           # GITHUB_TOKEN 是 CI 里自带的默认 token
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           # NPM_TOKEN 需要稍后在 npm 网站生成。
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
