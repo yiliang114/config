@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-          cache: "pnpm"
 
       # 设置 pnpm。指定版本 7.0，不然会报错
       - name: use pnpm
