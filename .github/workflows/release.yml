@@ -46,7 +46,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install project dependencies
-        run: pnpm i
+        run: pnpm i --frozen-lockfile=false
 
       # 打包
       - name: Build Packages
