@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    branches:
+      - main
 
 jobs:
   release:
@@ -41,7 +44,9 @@ jobs:
 
       # 打包
       - name: Build Packages
-        run: pnpm run build
+        run: |
+          cd packages/zhinang-cr-bot
+          npm run tsc-build
 
       - name: Auto CR
         env:
