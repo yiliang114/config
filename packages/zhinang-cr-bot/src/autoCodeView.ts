@@ -97,7 +97,18 @@ export async function autoCodeView(pullNumber: number) {
     !process.env.OWNER ||
     !process.env.REPO
   ) {
-    console.error('ZHINANG_TOKEN or GITHUB_TOKEN is required');
+    console.error('缺少必要的环境变量');
+
+    [
+      pullNumber,
+      process.env.ZHINANG_TOKEN,
+      process.env.GITHUB_TOKEN,
+      process.env.OWNER,
+      process.env.REPO,
+    ].forEach((val: string | number | undefined, index: number) => {
+      console.log(`params[${index}]: `, val);
+    });
+
     return;
   }
 
