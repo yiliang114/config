@@ -1,6 +1,6 @@
 # @yiliang114/config
 
-![schedule run](https://github.com/yiliang114/config/workflows/main%20action/badge.svg)
+[![Release](https://github.com/yiliang114/config/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/yiliang114/config/actions/workflows/release.yml)
 
 ## workflow
 

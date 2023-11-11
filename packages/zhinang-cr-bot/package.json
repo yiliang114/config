@@ -4,13 +4,12 @@
   "description": "zhinang-cr-bot",
   "main": "dist/index.js",
   "bin": {
-    "test-cli": "./bin/zhinang.js"
+    "zhinang": "./bin/zhinang.js"
   },
   "keywords": [
     "zhinang-cr"
   ],
   "scripts": {
-    "esbuild": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js",
     "build": "tsc",
     "dev": "tsc --watch"
   },
@@ -19,8 +18,7 @@
   "devDependencies": {
     "@types/node": "^20.9.0",
     "@yiliang114/tsconfig": "workspace:^3.0.3",
-    "dotenv": "^16.3.1",
-    "esbuild": "^0.19.5"
+    "dotenv": "^16.3.1"
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",

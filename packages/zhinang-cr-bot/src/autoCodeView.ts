@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/rest';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import ChatBot from './ChatBot';
+import ChatBot from './bot';
 
 const { OWNER, REPO, ZHINANG_TOKEN, GITHUB_TOKEN } = process.env;
 
@@ -55,6 +55,7 @@ async function generateReviewComment(
   commits: any[],
   pullNumber: number,
 ) {
+  let patchArr: string[] = [];
   changedFiles.forEach(async (changedFile: any) => {
     const { patch } = changedFile;
 
@@ -69,28 +70,41 @@ async function generateReviewComment(
       return;
     }
 
-    const res = await autoReviewBot.codeReview(patch);
-    console.log('codeReview 结果：', res);
-    if (!res) {
-      return;
-    }
+    patchArr.push(patch);
 
-    if (process.env.NODE_ENV === 'production') {
-      await octokit.rest.pulls.createReviewComment({
-        repo,
-        owner,
-        pullNumber,
-        commit_id: commits[commits.length - 1].sha,
-        path: changedFile.filename,
-        body: res,
-        position: patch.split('\n').length - 1,
-        pull_number: pullNumber,
-      });
-    }
+    // const res = await autoReviewBot.codeReview(patch);
+    // await octokit.rest.pulls.createReviewComment({
+    //   repo,
+    //   owner,
+    //   pullNumber,
+    //   commit_id: commits[commits.length - 1].sha,
+    //   path: changedFile.filename,
+    //   body: res,
+    //   position: patch.split('\n').length - 1,
+    //   pull_number: pullNumber,
+    // });
   });
+
+  const diffs = patchArr.join('\n');
+  const res = await autoReviewBot.codeReview(diffs);
+  console.log('codeReview 结果：', res);
+  if (!res) {
+    return;
+  }
+
+  if (process.env.NODE_ENV === 'production') {
+    const result = await octokit.rest.issues.createComment({
+      repo,
+      owner,
+      issue_number: pullNumber,
+      body: `## Zhinang.ai CodeReview\n\n${res}`,
+    });
+
+    console.log('评论结果：', result);
+  }
 }
 
-export async function autoCodeView(pullNumber: number) {
+export async function autoCodeView(pullNumber: string) {
   if (
     !process.env.ZHINANG_TOKEN ||
     !process.env.GITHUB_TOKEN ||
@@ -113,8 +127,8 @@ export async function autoCodeView(pullNumber: number) {
   }
 
   // 1. get pull request info
-  const pr = await getPRInfo(owner, repo, pullNumber);
-  console.log('pr', pr);
+  const pr = await getPRInfo(owner, repo, parseInt(pullNumber));
+  console.log('pr', pr?.issue_url);
 
   if (!pr) {
     console.log('pr not found');
@@ -132,5 +146,5 @@ export async function autoCodeView(pullNumber: number) {
   }
 
   // 3. generate review comment
-  generateReviewComment(changedFiles, commits, pullNumber);
+  generateReviewComment(changedFiles, commits, parseInt(pullNumber));
 }

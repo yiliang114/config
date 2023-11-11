@@ -6,11 +6,30 @@ export default class ChatBot {
   }
 
   private generatePrompt = (patch: string) => {
-    const prompt =
-      'You are an excellent IT engineer, help me review the following code. Below is a code diff, please help me do a code review, 没有修改意见的可以返回直接返回 OK, 如果有修改意见，请用中文哈:';
-    return `${prompt}:
-    ${patch}
-    `;
+    // const prompt =
+    //   'You are an excellent IT engineer, help me review the following code. Below is a code diff, please help me do a code review, 没有修改意见的可以返回直接返回 OK, 如果有修改意见，请用中文返回:';
+    // return `${prompt}:
+    // ${patch}
+    // `;
+
+    const prompt = `Act as a code reviewer of a GitLab merge request, providing feedback on the code changes below.
+      You are provided with the merge request changes in a diff format.
+      The diff which is get from the GitLab API: api/v4/projects/projectId/merge_requests/requestId/changes.
+      \n\n
+      Diff of the merge request to review:
+      \n
+      ${patch}
+      \n\n
+      As a code reviewer, your task is:
+      - Review the code changes (diffs) in the patch and provide feedback.
+      - If there are any bugs, highlight them.
+      - Does the code do what it says in the commit messages?
+      - Do not highlight minor issues and nitpicks.
+      - Use bullet points if you have multiple comments.
+      - If no suggestions are provided, please give good feedback.
+      - please use chinese to give feedback.`;
+
+    return prompt;
   };
 
   async codeReview(patch: string) {
