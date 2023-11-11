@@ -1,6 +1,6 @@
 # @yiliang114/zhinang-cr-bot
 
-## 3.0.5
+## 0.0.1
 
 ### Patch Changes
 
