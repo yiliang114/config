@@ -1,5 +1,11 @@
 # @yiliang114/zhinang-cr-bot
 
+## 3.0.7
+
+### Patch Changes
+
+- 7790dcd: fix: auto-cr.yml
+
 ## 3.0.6
 
 ### Patch Changes
