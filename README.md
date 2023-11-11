@@ -55,3 +55,9 @@ eslint-plugin-import@latest 的作用 ？
 ## 参考
 
 1. https://liruifengv.com/posts/github-action-release/
+
+## TODO:
+
+1. github 也能自动 release
+2. 是我本人自动合并分支
+3. 合并分支之后，自动删除分支

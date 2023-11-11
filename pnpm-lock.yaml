@@ -113,10 +113,12 @@ importers:
       '@octokit/rest': ^20.0.2
       '@types/node': ^20.9.0
       '@yiliang114/tsconfig': workspace:^3.0.3
+      cac: ^6.7.14
       dotenv: ^16.3.1
       esbuild: ^0.19.5
     dependencies:
       '@octokit/rest': 20.0.2
+      cac: 6.7.14
     devDependencies:
       '@types/node': 20.9.0
       '@yiliang114/tsconfig': link:../tsconfig
@@ -1805,6 +1807,11 @@ packages:
       base64-js: 1.5.1
       ieee754: 1.2.1
     dev: true
+
+  /cac/6.7.14:
+    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
+    engines: {node: '>=8'}
+    dev: false
 
   /cachedir/2.3.0:
     resolution: {integrity: sha512-A+Fezp4zxnit6FanDmv9EqXNAi3vt9DWp51/71UEhXukb7QUuvtv9344h91dyAxuTLoSYJFU299qzR3tzwPAhw==}

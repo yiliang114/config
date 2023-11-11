@@ -4,12 +4,14 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   release:
+    # This condition ensures that this job will not run on pull requests in draft state
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     runs-on: ubuntu-latest
     steps:
       - name: Checkout release branch code
@@ -20,7 +22,7 @@ jobs:
       - name: use Node.js 18
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: "18.x"
 
       - name: use pnpm 7.1.0
         uses: pnpm/action-setup@v2.2.4
@@ -46,7 +48,7 @@ jobs:
       - name: Build Packages
         run: |
           cd packages/zhinang-cr-bot
-          npm run tsc-build
+          npm run build
           cd ../../
 
       - name: Auto CR
