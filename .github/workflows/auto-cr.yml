@@ -60,4 +60,4 @@ jobs:
           REPO: ${{ github.event.repository.name }}
         run: |
           pwd
-          node ./scripts/auto-cr.js
+          NODE_ENV=production node ./scripts/auto-cr.js
