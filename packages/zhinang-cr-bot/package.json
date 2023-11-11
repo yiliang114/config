@@ -1,0 +1,23 @@
+{
+  "name": "@yiliang114/zhinang-cr-bot",
+  "version": "0.0.0",
+  "description": "zhinang-cr-bot",
+  "main": "dist/index.js",
+  "keywords": [
+    "zhinang-cr"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js"
+  },
+  "author": "yiliang114",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@yiliang114/tsconfig": "workspace:^3.0.3",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.5"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  }
+}
