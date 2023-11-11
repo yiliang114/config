@@ -3,7 +3,9 @@ name: auto-cr action
 on:
   pull_request:
     branches:
-      - main
+      # - main
+      # - 先注释掉
+      - test1111
   # push:
   #   branches:
   #     - main
