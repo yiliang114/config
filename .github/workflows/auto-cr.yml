@@ -1,0 +1,52 @@
+name: auto-cr action
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release branch code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: use pnpm 7.1.0
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.1.0
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install project dependencies
+        run: pnpm i --frozen-lockfile
+
+      # 打包
+      - name: Build Packages
+        run: pnpm run build
+
+      - name: Auto CR
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+          ZHINANG_TOKEN: ${{ secrets.ZHINANG_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: node ./scripts/auto-cr.mjs

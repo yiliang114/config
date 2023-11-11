@@ -91,6 +91,16 @@ async function generateReviewComment(
 }
 
 export async function autoCodeView(pullNumber: number) {
+  if (
+    !process.env.ZHINANG_TOKEN ||
+    !process.env.GITHUB_TOKEN ||
+    !process.env.OWNER ||
+    !process.env.REPO
+  ) {
+    console.error('ZHINANG_TOKEN or GITHUB_TOKEN is required');
+    return;
+  }
+
   // 1. get pull request info
   const pr = await getPRInfo(owner, repo, pullNumber);
   console.log('pr', pr);

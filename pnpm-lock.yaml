@@ -9,6 +9,7 @@ importers:
       '@commitlint/config-conventional': ^17.2.0
       '@typescript-eslint/eslint-plugin': ^5.42.0
       '@typescript-eslint/parser': ^4.33.0
+      '@yiliang114/eslint-config': workspace:^2.0.2
       changelog: link:@changesets/cli/changelog
       commitizen: ^4.2.5
       cz-conventional-changelog: ^3.3.0
@@ -31,6 +32,7 @@ importers:
       '@commitlint/config-conventional': 17.8.1
       '@typescript-eslint/eslint-plugin': 5.62.0_s2qqtxhzmb7vugvfoyripfgp7i
       '@typescript-eslint/parser': 4.33.0_jofidmxrjzhj7l6vknpw5ecvfe
+      '@yiliang114/eslint-config': link:packages/eslint-config
       changelog: link:@changesets/cli/changelog
       commitizen: 4.3.0_typescript@4.9.5
       cz-conventional-changelog: 3.3.0_typescript@4.9.5
