@@ -54,4 +54,4 @@ jobs:
           ZHINANG_TOKEN: ${{ secrets.ZHINANG_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-        run: node ./scripts/auto-cr.mjs
+        run: node ./scripts/auto-cr.js
