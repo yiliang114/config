@@ -100,7 +100,7 @@ export async function autoCodeView(pullNumber: number) {
     console.error('缺少必要的环境变量');
 
     [
-      process.env.pullNumber,
+      pullNumber,
       process.env.ZHINANG_TOKEN,
       process.env.GITHUB_TOKEN,
       process.env.OWNER,

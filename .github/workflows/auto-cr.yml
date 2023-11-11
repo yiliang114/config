@@ -54,6 +54,7 @@ jobs:
       - name: Auto CR
         env:
           PR_NUMBER: ${{ github.event.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ZHINANG_TOKEN: ${{ secrets.ZHINANG_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
