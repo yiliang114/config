@@ -1,5 +1,11 @@
 # @yiliang114/zhinang-cr-bot
 
+## 3.0.6
+
+### Patch Changes
+
+- cee439b: opt auto-cr
+
 ## 3.0.5
 
 ### Patch Changes

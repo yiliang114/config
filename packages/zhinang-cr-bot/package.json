@@ -1,6 +1,6 @@
 {
   "name": "@yiliang114/zhinang-cr-bot",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "zhinang-cr-bot",
   "main": "dist/index.js",
   "keywords": [
