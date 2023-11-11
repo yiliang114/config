@@ -1,5 +1,11 @@
 # @yiliang114/zhinang-cr-bot
 
+## 3.0.8
+
+### Patch Changes
+
+- 1cfbd6d: feat: 将 zhinang code review 的形式修改为合并评论和建议的形式
+
 ## 3.0.7
 
 ### Patch Changes
