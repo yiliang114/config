@@ -47,6 +47,7 @@ jobs:
         run: |
           cd packages/zhinang-cr-bot
           npm run tsc-build
+          cd ../../
 
       - name: Auto CR
         env:
@@ -54,4 +55,6 @@ jobs:
           ZHINANG_TOKEN: ${{ secrets.ZHINANG_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-        run: node ./scripts/auto-cr.js
+        run: |
+          pwd
+          node ./scripts/auto-cr.js
