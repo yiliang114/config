@@ -11,7 +11,7 @@ on:
   #     - main
 
 jobs:
-  release:
+  CodeReview:
     # This condition ensures that this job will not run on pull requests in draft state
     if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     runs-on: ubuntu-latest

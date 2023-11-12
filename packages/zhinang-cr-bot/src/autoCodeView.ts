@@ -20,13 +20,15 @@ const octokit = new Octokit({
 
 async function getPRInfo(owner: string, repo: string, pull_number: number) {
   try {
+    console.log('getPRInfo', owner, repo, pull_number);
     const { data: pr } = await octokit.rest.pulls.get({
       owner,
       repo,
       pull_number,
     });
     return pr;
-  } catch {
+  } catch (error) {
+    console.error('getPRInfo error', error);
     return undefined;
   }
 }
@@ -45,7 +47,8 @@ async function getCompareCommits(
         head: pr.head.sha,
       })
     ).data;
-  } catch {
+  } catch (error) {
+    console.error('getCompareCommits error', error);
     return undefined;
   }
 }
@@ -70,6 +73,15 @@ async function generateReviewComment(
       return;
     }
 
+    if (
+      ['lock.yaml', '.lock'].some(filename =>
+        changedFile.filename?.endsWith(filename),
+      )
+    ) {
+      console.log(`${changedFile.filename} skipped caused by ignore file`);
+      return;
+    }
+
     patchArr.push(patch);
 
     // const res = await autoReviewBot.codeReview(patch);
@@ -86,6 +98,7 @@ async function generateReviewComment(
   });
 
   const diffs = patchArr.join('\n');
+  console.log('diffs', diffs);
   const res = await autoReviewBot.codeReview(diffs);
   console.log('codeReview 结果：', res);
   if (!res) {
@@ -93,14 +106,18 @@ async function generateReviewComment(
   }
 
   if (process.env.NODE_ENV === 'production') {
-    const result = await octokit.rest.issues.createComment({
-      repo,
-      owner,
-      issue_number: pullNumber,
-      body: `## Zhinang.ai CodeReview\n\n${res}`,
-    });
+    try {
+      const result = await octokit.rest.issues.createComment({
+        repo,
+        owner,
+        issue_number: pullNumber,
+        body: `## Zhinang.ai CodeReview\n\n${res}`,
+      });
 
-    console.log('评论结果：', result);
+      console.log('评论结果：', result);
+    } catch (error) {
+      console.error('评论失败：', error);
+    }
   }
 }
 
@@ -128,7 +145,7 @@ export async function autoCodeView(pullNumber: string) {
 
   // 1. get pull request info
   const pr = await getPRInfo(owner, repo, parseInt(pullNumber));
-  console.log('pr', pr?.issue_url);
+  console.log('pr', pr?.html_url);
 
   if (!pr) {
     console.log('pr not found');
