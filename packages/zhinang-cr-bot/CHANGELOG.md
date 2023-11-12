@@ -1,5 +1,11 @@
 # @yiliang114/zhinang-cr-bot
 
+## 3.0.9
+
+### Patch Changes
+
+- f419144: add log for cr-bot
+
 ## 3.0.8
 
 ### Patch Changes
